@@ -1,0 +1,26 @@
+name: 'Issue commenter'
+description: 'Provides comments on GitHub issues/pull requests'
+author: 'AlexRogalskiy'
+
+inputs:
+  sourceData:
+    description: 'JSON data source with action parameters'
+    required: false
+  message:
+    description: "Comment message"
+    required: false
+  pullRequestId:
+    description: "Pull request identifier"
+    required: false
+  GITHUB_TOKEN:
+    description: "Github action token"
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+# Ref: https://haya14busa.github.io/github-action-brandings/
+branding:
+  icon: 'git-pull-request'
+  color: 'purple'
