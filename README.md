@@ -11,7 +11,7 @@
 [![Chat](https://img.shields.io/badge/chat-discussions-success.svg)](https://github.com/AlexRogalskiy/github-action-issue-commenter/discussions)
 
 [![DeepSource](https://deepsource.io/gh/AlexRogalskiy/github-action-issue-commenter.svg/?label=active+issues\&show_trend=true)](https://deepsource.io/gh/AlexRogalskiy/github-action-issue-commenter/?ref=repository-badge)
-[![DeepScan grade](https://deepscan.io/api/teams/11946/projects/16314/branches/347248/badge/grade.svg)](https://deepscan.io/dashboard#view=project\&tid=11946\&pid=16314\&bid=347248)
+[![DeepScan grade](https://deepscan.io/api/teams/11946/projects/16681/branches/362753/badge/grade.svg)](https://deepscan.io/dashboard#view=project\&tid=11946\&pid=16681\&bid=362753)
 
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/AlexRogalskiy/github-action-issue-commenter)
 ![GitHub Release Date](https://img.shields.io/github/release-date/AlexRogalskiy/github-action-issue-commenter)
@@ -33,6 +33,7 @@
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/AlexRogalskiy/github-action-issue-commenter.svg?logo=lgtm\&logoWidth=18)](https://lgtm.com/projects/g/AlexRogalskiy/github-action-issue-commenter/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/AlexRogalskiy/github-action-issue-commenter.svg?logo=lgtm\&logoWidth=18)](https://lgtm.com/projects/g/AlexRogalskiy/github-action-issue-commenter/context:javascript)
+
 [![codecov](https://codecov.io/gh/AlexRogalskiy/github-action-issue-commenter/branch/main/graph/badge.svg?token=ZiMgSTfzPv)](https://codecov.io/gh/AlexRogalskiy/github-action-issue-commenter)
 [![CI](https://github.com/AlexRogalskiy/github-action-issue-commenter/workflows/CI/badge.svg)](https://github.com/AlexRogalskiy/github-action-issue-commenter/actions/workflows/build.yml)
 [![CircleCI](https://circleci.com/gh/AlexRogalskiy/github-action-issue-commenter.svg?style=shield)](https://circleci.com/gh/AlexRogalskiy/github-action-issue-commenter)
@@ -51,7 +52,7 @@
 - [*Description*](#description)
 - [*Inputs*](#inputs)
   - [`sourceData`](#sourcedata)
-  - [`pullRequestId`](#pullrequestid)
+  - [`requestId`](#requestid)
   - [`GITHUB_TOKEN`](#github_token)
 - [*Examples*](#examples)
 - [*Visitor stats*](#visitor-stats)
@@ -91,18 +92,27 @@ Provides comments on GitHub issues/pull requests.
 ```json
 [
     {
-        "message": "Commenting on pull request # 11",
-        "pullRequestId": 11
+        "commentOptions": {
+            "message": "Commenting on pull request # 10"
+        },
+        "resourceOptions": {
+            "requestId": 10
+        }
     },
     {
-        "message": "Commenting on current pull request"
+        "commentOptions": {
+            "message": "Commenting on pull request # 9"
+        },
+        "resourceOptions": {
+            "requestId": 9
+        }
     }
 ]
 ```
 
-### `pullRequestId`
+### `requestId`
 
-**Optional** Pull request identifier
+**Optional** Request identifier
 
 ### `GITHUB_TOKEN`
 
@@ -110,11 +120,24 @@ Provides comments on GitHub issues/pull requests.
 
 ## *Examples*
 
+#### Basic configuration
+
 ```yml
 - name: Comment on issue by current pull request
   uses: alexrogalskiy/github-action-issue-commenter@master
   with:
     message: 'Commenting on issue to testify its valid resolution'
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+#### Complete configuration
+
+```yml
+- name: Comment on issue by current pull request
+  uses: alexrogalskiy/github-action-issue-commenter@master
+  with:
+    message: 'Commenting on issue to testify its valid resolution'
+    requestId: 10
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 

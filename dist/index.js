@@ -45900,10 +45900,10 @@ const valueError = (message, ...args) => {
 
 const octokit = new github.GitHub(getRequiredProperty('GITHUB_TOKEN'));
 const getCommentId = async (options) => {
-    const { repoOptions, resourceOptions: { pullRequestNumber }, } = options;
+    const { repoOptions, resourceOptions: { requestId }, } = options;
     const { data: comments } = await octokit.issues.listComments({
         ...repoOptions,
-        issue_number: pullRequestNumber,
+        issue_number: requestId,
     });
     const res = comments.filter(comment => comment.user.login === 'github-actions[bot]');
     if (res.length > 0) {
@@ -45912,7 +45912,7 @@ const getCommentId = async (options) => {
     return null;
 };
 const replaceComment = async (options) => {
-    const { commentOptions: { message }, repoOptions, resourceOptions: { pullRequestNumber }, } = options;
+    const { commentOptions: { message }, repoOptions, resourceOptions: { requestId }, } = options;
     const commentId = await getCommentId(options);
     if (commentId) {
         await octokit.issues.updateComment({
@@ -45924,7 +45924,7 @@ const replaceComment = async (options) => {
     else {
         await octokit.issues.createComment({
             ...repoOptions,
-            issue_number: pullRequestNumber,
+            issue_number: requestId,
             body: message,
         });
     }
@@ -45946,14 +45946,14 @@ const processComment = async (options) => {
 };
 const buildConfigOptions = async (options) => {
     const message = options.commentOptions?.message || getRequiredProperty('message');
-    const pullRequestNumber = options.resourceOptions?.pullRequestNumber ||
-        getProperty('pullRequestId') ||
+    const requestId = options.resourceOptions?.requestId ||
+        getProperty('requestId') ||
         github.context.payload.pull_request.number;
-    if (!isNullOrUndefined(pullRequestNumber)) {
-        throw valueError(`Invalid pull request identifier: ${pullRequestNumber}`);
+    if (isNullOrUndefined(requestId)) {
+        throw valueError(`Invalid pull request identifier: ${requestId}`);
     }
     const commentOptions = { message };
-    const resourceOptions = { pullRequestNumber };
+    const resourceOptions = { requestId };
     const repoOptions = github.context.repo;
     return {
         commentOptions,
@@ -45987,7 +45987,7 @@ async function run() {
         await runCommentOperation();
     }
     catch (error) {
-        core.setFailed(`Cannot process input image data, message: ${error.message}`);
+        core.setFailed(`Cannot process input comment data, message: ${error.message}`);
     }
 }
 run();

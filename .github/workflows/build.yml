@@ -87,6 +87,7 @@ jobs:
       - uses: ./
         with:
           message: 'Commenting on issue to testify its valid resolution'
+          requestId: 10,
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push changes

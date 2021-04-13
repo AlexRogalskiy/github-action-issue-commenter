@@ -54,9 +54,9 @@ export type RepoOptions = {
  */
 export type ResourceOptions = {
     /**
-     * Pull request number
+     * Request identifier
      */
-    pullRequestNumber: number
+    requestId: number
 }
 
 //--------------------------------------------------------------------------------------------------

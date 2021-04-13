@@ -9,8 +9,8 @@ inputs:
   message:
     description: "Comment message"
     required: false
-  pullRequestId:
-    description: "Pull request identifier"
+  requestId:
+    description: "Request identifier"
     required: false
   GITHUB_TOKEN:
     description: "Github action token"
