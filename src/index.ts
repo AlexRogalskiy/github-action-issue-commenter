@@ -79,7 +79,7 @@ const processComment = async (options: ConfigOptions): Promise<void> => {
     }
 }
 
-const buildConfigOptions = async (options: Partial<ConfigOptions>): Promise<ConfigOptions> => {
+const buildConfigOptions = (options: Partial<ConfigOptions>): ConfigOptions => {
     const message = options.commentOptions?.message || getRequiredProperty('message')
     const requestId =
         options.resourceOptions?.requestId ||
@@ -104,7 +104,7 @@ const buildConfigOptions = async (options: Partial<ConfigOptions>): Promise<Conf
 }
 
 const getOperationStatus = async (option: Partial<ConfigOptions>): Promise<void> => {
-    const options = await buildConfigOptions(option)
+    const options = buildConfigOptions(option)
 
     return await processComment(options)
 }
