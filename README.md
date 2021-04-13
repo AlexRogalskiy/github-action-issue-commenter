@@ -120,7 +120,7 @@ Provides comments on GitHub issues/pull requests.
 
 ## *Examples*
 
-#### Basic configuration
+### Basic configuration
 
 ```yml
 - name: Comment on issue by current pull request
@@ -130,7 +130,7 @@ Provides comments on GitHub issues/pull requests.
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-#### Complete configuration
+### Complete configuration
 
 ```yml
 - name: Comment on issue by current pull request
