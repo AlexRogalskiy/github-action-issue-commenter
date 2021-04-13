@@ -55,6 +55,8 @@
   - [`requestId`](#requestid)
   - [`GITHUB_TOKEN`](#github_token)
 - [*Examples*](#examples)
+  - [Basic configuration](#basic-configuration)
+  - [Complete configuration](#complete-configuration)
 - [*Visitor stats*](#visitor-stats)
 - [*Licensing*](#licensing)
 - [*Authors*](#authors)
