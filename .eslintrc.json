@@ -1,8 +1,17 @@
 {
-    "plugins": ["jest", "@typescript-eslint", "spellcheck", "eslint-comments", "unicorn"],
+    "plugins": [
+        "jest",
+        "@typescript-eslint",
+        "spellcheck",
+        "eslint-comments",
+        "unicorn"
+    ],
     "settings": {
         "import/parsers": {
-            "@typescript-eslint/parser": [".ts", ".js"]
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".js"
+            ]
         },
         "import/resolver": {
             "typescript": {}
@@ -24,9 +33,18 @@
         "project": "./tsconfig.json"
     },
     "rules": {
-        "indent": ["error", 4],
-        "linebreak-style": ["error", "unix"],
-        "jsx-quotes": ["error", "prefer-double"],
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "jsx-quotes": [
+            "error",
+            "prefer-double"
+        ],
         "quotes": [
             "error",
             "single",
@@ -34,10 +52,16 @@
                 "avoidEscape": true
             }
         ],
-        "comma-dangle": ["error", "only-multiline"],
+        "comma-dangle": [
+            "error",
+            "only-multiline"
+        ],
         "no-case-declarations": "off",
         "eqeqeq": "warn",
-        "quote-props": ["warn", "consistent-as-needed"],
+        "quote-props": [
+            "warn",
+            "consistent-as-needed"
+        ],
         "no-console": "off",
         "no-shadow": "off",
         "no-alert": "error",
@@ -134,7 +158,10 @@
                 "checkLoops": false
             }
         ],
-        "dot-location": ["error", "property"],
+        "dot-location": [
+            "error",
+            "property"
+        ],
         "brace-style": [
             "error",
             "1tbs",
@@ -161,7 +188,10 @@
                 "allowExpressions": true
             }
         ],
-        "@typescript-eslint/func-call-spacing": ["error", "never"],
+        "@typescript-eslint/func-call-spacing": [
+            "error",
+            "never"
+        ],
         "@typescript-eslint/no-array-constructor": "error",
         "@typescript-eslint/no-empty-interface": "error",
         "@typescript-eslint/no-explicit-any": "off",
@@ -183,7 +213,10 @@
         "@typescript-eslint/require-array-sort-compare": "error",
         "@typescript-eslint/restrict-plus-operands": "off",
         "semi": "off",
-        "@typescript-eslint/semi": ["error", "never"],
+        "@typescript-eslint/semi": [
+            "error",
+            "never"
+        ],
         "@typescript-eslint/type-annotation-spacing": "error",
         "@typescript-eslint/unbound-method": "off",
         "@typescript-eslint/member-ordering": "off",
@@ -192,7 +225,15 @@
         "@typescript-eslint/no-empty-function": "warn",
         "@typescript-eslint/no-this-alias": "warn",
         "@typescript-eslint/ban-types": "warn",
-        "@typescript-eslint/quotes": "off"
+        "@typescript-eslint/quotes": "off",
+        "@typescript-eslint/class-name-casing": "off",
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "@typescript-eslint/generic-type-naming": [
+            "off",
+            "^[A-Z][A-Za-z]*$"
+        ],
+        "@typescript-eslint/no-object-literal-type-assertion": "off",
+        "@typescript-eslint/prefer-interface": "off"
     },
     "env": {
         "node": true,
