@@ -1,5 +1,5 @@
 name: 'Issue commenter'
-description: 'Provides comments on GitHub issues/pull requests'
+description: 'Automatically generates comments on issues/pull requests by provided parameters'
 author: 'AlexRogalskiy'
 
 inputs:

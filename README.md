@@ -1,4 +1,4 @@
-# *File Size*
+# *Issue Commenter*
 
 > GitHub Action to provide comments on issues/pull requests
 
