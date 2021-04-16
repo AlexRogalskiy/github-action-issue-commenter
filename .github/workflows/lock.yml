@@ -13,19 +13,13 @@ jobs:
         with:
           github-token: ${{ github.token }}
           issue-lock-inactive-days: '180'
-          # issue-exclude-created-before: ''
-          # issue-exclude-labels: ''
-          # issue-lock-labels: ''
           issue-lock-comment: >
-            This old thread has been automatically locked. If you think you have
-            found something related to this, please open a new issue by following
-            the issue guide (<https://github.com/AlexRogalskiy/github-action-issue-commenter/blob/master/.github/ISSUE_TEMPLATE/bug_report.md>), and link to this
-            old issue if necessary.
-          issue-lock-reason: 'resolved'r
+            This issue has been automatically locked since there
+            has not been any recent activity after it was closed.
+            Please open a new issue for related bugs.
+          issue-lock-reason: 'resolved'
           pr-lock-inactive-days: '180'
-          # pr-exclude-created-before: ''
-          # pr-exclude-labels: ''
-          # pr-lock-labels: ''
-          # pr-lock-comment: ''
-          # pr-lock-reason: ''
-          # process-only: ''
+          pr-lock-comment: >
+            This pull request has been automatically locked since there
+            has not been any recent activity after it was closed.
+            Please open a new issue for related bugs.
