@@ -48,4 +48,4 @@ COPY package-lock.json .
 RUN npm install
 
 ## Running package bundle
-ENTRYPOINT ["node", "./index.js"]
+ENTRYPOINT [ "sh", "-c", "node $HOME/index.js" ]
