@@ -31,9 +31,9 @@
 [![dependencies Status](https://status.david-dm.org/gh/AlexRogalskiy/github-action-issue-commenter.svg)](https://david-dm.org/AlexRogalskiy/github-action-issue-commenter)
 [![devDependencies Status](https://status.david-dm.org/gh/AlexRogalskiy/github-action-issue-commenter.svg)](https://david-dm.org/AlexRogalskiy/github-action-issue-commenter?type=dev)
 
+[![codebeat badge](https://codebeat.co/badges/f629975d-4bee-4ee3-8486-4ab22aaeafac)](https://codebeat.co/projects/github-com-alexrogalskiy-github-action-issue-commenter-master)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/AlexRogalskiy/github-action-issue-commenter.svg?logo=lgtm\&logoWidth=18)](https://lgtm.com/projects/g/AlexRogalskiy/github-action-issue-commenter/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/AlexRogalskiy/github-action-issue-commenter.svg?logo=lgtm\&logoWidth=18)](https://lgtm.com/projects/g/AlexRogalskiy/github-action-issue-commenter/context:javascript)
-
 [![codecov](https://codecov.io/gh/AlexRogalskiy/github-action-issue-commenter/branch/main/graph/badge.svg?token=ZiMgSTfzPv)](https://codecov.io/gh/AlexRogalskiy/github-action-issue-commenter)
 [![CI](https://github.com/AlexRogalskiy/github-action-issue-commenter/workflows/CI/badge.svg)](https://github.com/AlexRogalskiy/github-action-issue-commenter/actions/workflows/build.yml)
 [![CircleCI](https://circleci.com/gh/AlexRogalskiy/github-action-issue-commenter.svg?style=shield)](https://circleci.com/gh/AlexRogalskiy/github-action-issue-commenter)
